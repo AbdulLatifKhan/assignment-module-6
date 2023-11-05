@@ -1,0 +1,2 @@
+
+SELECT c.name, SUM(pi.unit_price * pi.quantity) AS total_revenue FROM categories c LEFT JOIN products p ON c.id = p.category_id LEFT JOIN order_items pi ON pi.product_id = p.id GROUP BY c.name ORDER BY total_revenue DESC
